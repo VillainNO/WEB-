@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Data Kelas 11 RPL </title>
+    <link href="c:\Users\pc31\Downloads\smekta.png" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 100px;
+            background-color: #519bcc; /* Latar belakang yang lebih lembut */
+            background: linear-gradient(to bottom, #4facfe, #00f2fe, #43e97b, #3a7bd5);
+          
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .atas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem; /* Menambah ukuran font untuk header */
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Efek hover untuk kontainer */
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        button {
+            flex: 1;
+            margin: 0 -5px;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+        }
+        .card-container {
+            display: flex; /* Gunakan flexbox untuk tata letak */
+            flex-wrap: wrap; /* Membungkus kartu agar responsif */
+            justify-content: space-between; /* Ruang merata antar kartu */
+            gap: 20px; /* Jarak antar kartu */
+            padding: 20px; /* Jarak dalam container */
+            background-color: #f5f5f5; /* Latar belakang lembut */
+            border-radius: 10px; /* Sudut membulat */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+            margin-top: 30px; /* Jarak atas */
+            display: none; /* Awalnya disembunyikan */
+            animation: fadeIn 0.5s ease-in-out; /* Animasi saat muncul */
+        }
+        
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 calc(30% - 20px); /* Ukuran kartu */
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .card img:hover {
+            transform: scale(1.1); /* Efek zoom saat hover */
+        }
+        table {
+            width: 100%; /* Lebar penuh */
+            border-collapse: collapse; /* Menghapus jarak antar garis */
+            margin-top: 30px; /* Jarak atas tabel */
+            background-color: #f9f9f9; /* Warna latar lembut */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan tabel */
+            border-radius: 8px; /* Sudut membulat */
+            overflow: hidden; /* Menjaga sudut */
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f7f9fc; /* Latar belakang baris genap */
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: calc(33% - 15px);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        /* Styling untuk gambar dalam gallery */
+.gallery {
+    display: grid; /* Tata letak grid untuk galeri */
+    gap: 15px; /* Jarak antar gambar */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsif */
+    padding: 20px; /* Padding di sekitar galeri */
+    background-color: #f5f5f5; /* Latar belakang lembut */
+    border-radius: 10px; /* Sudut membulat untuk galeri */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut untuk galeri */
+}
+
+/* Styling untuk gambar individual */
+.gallery img {
+    width: 100%; /* Gambar menyesuaikan lebar kolom */
+    height: auto; /* Proporsi gambar tetap */
+    border-radius: 8px; /* Sudut membulat untuk gambar */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transisi halus */
+    cursor: pointer; /* Tampilkan kursor pointer */
+}
+
+/* Efek hover pada gambar */
+.gallery img:hover {
+    transform: scale(1.1); /* Gambar membesar sedikit */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Bayangan lebih tegas */
+    filter: brightness(1.1); /* Sedikit cerahkan gambar */
+    border: 3px solid #4facfe; /* Tambahkan border warna gradien */
+}
+
+/* Responsivitas untuk layar kecil */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Kolom lebih kecil */
+        gap: 10px; /* Kurangi jarak antar gambar */
+    }
+}
+
+        .q {
+            text-align: center; /* Rata tengah teks */
+            margin-top: 50px; /* Jarak atas */
+            font-size: 1.5rem; /* Ukuran teks lebih besar */
+            color: #333; /* Warna dasar teks */
+            font-weight: 700; /* Teks lebih tebal */
+            letter-spacing: 1px; /* Jarak antar huruf */
+            text-transform: uppercase; /* Huruf kapital */
+            background: linear-gradient(90deg, #4facfe, #43e97b); /* Gradien warna */
+            -webkit-background-clip: text; /* Terapkan gradien hanya pada teks */
+            -webkit-text-fill-color: transparent; /* Menghapus warna solid teks */
+            animation: fadeIn 1.5s ease-in-out, pulse 2s infinite; /* Animasi masuk dan efek berdenyut */
+        }
+        
+    </style>
+    
+    <script>
+        function toggleCards(cardType) {
+            const cardContainers = ['siswaCards', 'guruCards', 'piketCards', 'strukturCards', 'gallery', 'jadwalPelajaran', 'kegiatanKelas'];
+
+            // Sembunyikan semua kartu
+            cardContainers.forEach(id => {
+                const container = document.getElementById(id);
+                if (container) {
+                    container.style.display = id === cardType ? "flex" : "none";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="atas">
+    <img src="IMG/logo smk.png" alt="Deskripsi Gambar" style="width:16%; height:auto;"class="q">
+        <h1>Struktur Data Kelas 11 RPL</h1>
+        <img src="IMG/RPL.png" alt="Deskripsi Gambar" style="width:16%; height:auto;"class="q">
+    </div>
+
+    <div class="container">
+        
+
+        <div class="button-container">
+            <button onclick="toggleCards('siswaCards')">Data Siswa</button>
+            <button onclick="toggleCards('guruCards')">Data Guru</button>
+            <button onclick="toggleCards('piketCards')">Piket Kelas</button>
+            <button onclick="toggleCards('strukturCards')">Struktur Kelas</button>
+            <button onclick="toggleCards('gallery')">Galeri Foto</button>
+            <button onclick="toggleCards('jadwalPelajaran')">Jadwal Pelajaran</button>
+            <button onclick="toggleCards('kegiatanKelas')">Kegiatan Kelas</button>
+        </div>
+
+        <div id="siswaCards" class="card-container">
+            <div class="card">
+                <img src="IMG/ang angg.jpeg" alt="Foto Ahmad ikhsanul amal">
+                <h3>Ahmad ikhsanul amal</h3>
+                <p>Kelas: 11 RPL</p>
+                <p>TTL:tuban 06-05-2007</p>
+                <p>NISN:0078131680</p>
+                <p>ALAMAT::SOCOREJO-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/o.jpeg" alt="Foto achmad nur alvian">
+                <h3>Ahmad nur alvian</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 17-08-2007</p>
+                <p>NISN:0075584792</p>
+                <p>ALAMAT:MBELEK-TAMBAKBOYO-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/0000.jpeg" alt="Foto Ahmad faizun">
+                <h3>Ahmad faizun</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 03-01-2008</p>
+                <p>NISN:0083365737</p>
+                <p>ALAMAT:MBELEK-TAMBAKBOYO-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/amel.jpeg" alt="Foto amelia putri">
+                <h3>Amelia putri</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 02-06-2007</p>
+                <p>NISN:0076142697</p>
+                <p>ALAMAT:TEMAJI-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/arin.jpeg" alt="Foto aatrinun nasihah">
+                <h3>Arinatun nasihah</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 28-06-2008</p>
+                <p>NISN:0088746711</p>
+                <p>ALAMAT:MERKAWANG-TAMBAKBOYO-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/pani.jpeg" alt="Foto candra efania">
+                <h3>Candra efania</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 16-11-2007</p>
+                <p>NISN:0075584055</p>
+                <p>ALAMAT:SOCOREJO-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/elin.jpeg" alt="Foto dahlia suaida nur amalina">
+                <h3>Dahlia suaida nur amalina</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 03-06-2008</p>
+                <p>NISN:0084963951</p>
+                <p>ALAMAT:SUMURGENENG-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/eka.jpeg" alt="Foto eka putri meyrina">
+                <h3>Eka putri meyrina</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 16-05-2007</p>
+                <p>NISN:0076508887</p>
+                <p>ALAMAT:MERKAWANG-TAMBAKBOYO-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/piraaa.jpeg" alt="Foto elvira aisyah kirani">
+                <h3>Elvira aisyah kirani</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 12-05-2008</p>
+                <p>NISN:0085971756</p>
+                <p>ALAMAT:MAMER-TAMBAKBOYO-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/fajri.jpeg" alt="Foto fachri farandy yusuf alghifari utomo">
+                <h3>Fachri farandy yusuf alghifari utomo<h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 17-06-2008</p>
+                <p>NISN:0083079699</p>
+                <p>ALAMAT:MANDER-KEREK-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/via.jpeg" alt="Foto fia helda kristina">
+                <h3>Fia helda kristina</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 21-01-2008</p>
+                <p>NISN:0083245623</p>
+                <p>ALAMAT:SIDOREJO-KERREK-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/hesti.jpeg" alt="Foto ica putri maya hesti">
+                <h3>Ica putri maya hesti</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 16-11-2007</p>
+                <p>NISN:0077624622</p>
+                <p>ALAMAT:DASIN-TAMBAKBOYO-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/izaa.jpeg" alt="Foto izzatul maulida rahma">
+                <h3>Izzatul maulida rahma</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 19-05-2008</p>
+                <p>NISN:0081673620</p>
+                <p>ALAMAT:KARANGASEM-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/putri.jpeg" alt="Foto jasiska ika putri">
+                <h3>Jasiska ika putri</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 17-10-2008</p>
+                <p>NISN:0081586369</p>
+                <p>ALAMAT:GAJI-KEREK-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/atin.jpeg" alt="Foto jumiatin">
+                <h3>Jumiatin</h3>
+                <p>Kelas: 11 RPL</p>
+                <p>TTL:tuban 10-07-2007</p>
+                <p>NISN:0063082496</p>
+                <p>ALAMAT:GAJI-KEREK-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/nikmah.jpeg" alt="Foto karomatin nikmah">
+                <h3>Karomatin nikmah</h3>
+                <p>Kelas: 11 RPL</p>
+                <p>TTL:tuban 12-08-2007</p>
+                <p>NISN:0078711056</p>
+                <p>ALAMAT:SOTANG-TAMBAKBOYO-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/aufa.jpeg" alt="Foto khoimatul aufa">
+                <h3>Khoimatul aufa</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 07-12-2007</p>
+                <p>NISN:0077211134</p>
+                <p>ALAMAT:MENTOSO-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/huda kece.jpeg" alt="Foto m.miftahkul huda">
+                <h3>M.miftahkul huda</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 07-12-2007</p>
+                <p>NISN:0076508887</p>
+                <p>ALAMAT:SUMURGENENG-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/abi.jpeg" alt="Foto m.tofa nur abidin">
+                <h3>M.tofa nur abidin</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 25-05-2007</p>
+                <p>NISN:0078099704</p>
+                <p>ALAMAT:BRANGKAL-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/perdi.jpeg" alt="Foto m.fathkur ferdiansyah">
+                <h3>M.fathkur ferdiansyah</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 16-02-2008</p>
+                <p>NISN:0085804080</p>
+                <p>ALAMAT:PERENG-JENU-TUBAN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/rehan.jpeg" alt="Foto m.rayhan faadihilah">
+                <h3>M.rayhan faadihilah</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 11-08-2007</p>
+                <p>NISN:0078749240</p>
+            </div>
+            <div class="card">
+                <img src="IMG/naim.jpeg" alt="Foto naim dwi priatmojo">
+                <h3>Naim dwi priatmojo</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 04-03-2008</p>
+                <p>NISN:0082660705</p>
+            </div>
+            <div class="card">
+                <img src="IMG/pl.jpeg" alt="Foto naela puspita">
+                <h3>Naela puspita</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 08-07-2008</p>
+                <p>NISN:0083338845</p>
+            </div>
+            <div class="card">
+                <img src="IMG/nng.jpeg" alt="Foto nanung syantoro">
+                <h3>Nanung syantoro</h3>
+                <p>Kelas: 11 RPL</p>
+                <p>TTL:tuban 29-11-2007</p>
+                <p>NISN:0072485746</p>
+            </div>
+            <div class="card">
+                <img src="IMG/anggun.jpeg" alt="Foto novi anggun yunita ariyani">
+                <h3>Novi anggun yunita ariyani</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 04-11-2007</p>
+                <p>NISN:0071700614</p>
+            </div>
+            <div class="card">
+                <img src="IMG/pinky.jpeg" alt="Foto pingki shofiantis">
+                <h3>Pingki shofianti</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 04-09-2007</p>
+                <p>NISN:0078526545</p>
+            </div>
+            <div class="card">
+                <img src="IMG/ragil.jpeg" alt="Foto ragil erndika mulyan">
+                <h3>Ragil erndika mulyan</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 24-04-2008</p>
+                <p>NISN:0083049191</p>
+            </div>
+            <div class="card">
+                <img src="IMG/reva.jpeg" alt="Foto reva aulia">
+                <h3>Reva aulia</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 21-05-2008</p>
+                <p>NISN:0081645060</p>
+            </div>
+            <div class="card">
+                <img src="IMG/siti.jpeg" alt="Foto siti amaliza">
+                <h3>Siti amaliza</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 12-03-2008</p>
+                <p>NISN:0081103704</p>
+            </div>
+            <div class="card">
+                <img src="IMG/nopii.jpeg" alt="Foto siti novita">
+                <h3>Siti novita</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL: KEBUMEN 22-11-2007</p>
+                <p>NISN:0079114210</p>
+            </div>
+            <div class="card">
+                <img src="IMG/rissa.jpeg" alt="Foto sofi arisa">
+                <h3>Sofi arisa</h3>
+                <p>Kelas:  11 RPL</p>
+                <p>TTL:tuban 09-01-2009</p>
+                <p>NISN:0098529830</p>
+          </div>
+          <div class="card">
+            <img src="IMG/up.jpeg" alt="Foto susianti">
+            <h3>Susianti</h3>
+            <p>Kelas:  11 RPL</p>
+            <p>TTL:tuban 17-03-2004</p>
+            <p>NISN:0048967413</p>
+        </div>
+        <div class="card">
+            <img src="IMG/asbah.jpeg" alt="Foto tholiul asbah">
+            <h3>Tholiul asbah</h3>
+            <p>Kelas:  11 RPL</p>
+            <p>TTL:tuban 18-04-2007</p>
+            <p>NISN:0088706519</p>
+        </div>
+        <div class="card">
+            <img src="IMG/ayu.jpeg" alt="Foto wahyu rohmawati">
+            <h3>Wahyu rohmawati</h3>
+            <p>Kelas:  11 RPL</p>
+            <p>TTL:tuban 25-10-2008</p>
+            <p>NISN:0084702872</p>
+        </div> 
+        <div class="card">
+            <img src="IMG/y.jpeg" alt="Foto yunia melati soleha">
+            <h3>Yunia melati soleha</h3>
+            <p>Kelas:  11 RPL</p>
+            <p>TTL:tuban 20-06-2007</p>
+            <p>NISN:0074255852</p>
+        </div>
+        <div class="card">
+            <img src="IMG/oo.jpeg" alt="Foto yunita">
+            <h3>Yunita</h3>
+            <p>Kelas:  11 RPL</p>
+            <p>TTL:tuban 25-11-2008</p>
+            <p>NISN:0082116543</p>
+        </div>  
+    </div>             
+
+        <div id="guruCards" class="card-container">
+            <div class="card">
+                <img src="IMG/agus-siswanto.png" alt="Fotoagus siswanto, S.Pd., M.Pd.">
+                <h3>agus siswanto, S.Pd., M.Pd. </h3>
+                <p>Jabatan: kepala sekolah</p>
+            </div>
+            <div class="card">
+                <img src="IMG/sofa.jpeg" alt="Foto pak sofa">
+                <h3>pak sofa</h3>
+                <p>Jabatan: guru b indo</p>
+            </div>
+            <div class="card">
+                <img src="IMG/ridha.jpeg" alt="Foto Bu rida">
+                <h3>Bu rida</h3>
+                <p>Jabatan: Guru Bahasa Jawa</p>
+            </div>
+            <div class="card">
+                <img src="IMG/tata.jpeg" alt="Foto Bu rida">
+                <h3>Bu rida</h3>
+                <p>Jabatan: Guru PKK</p>
+            </div>
+            <div class="card">
+                <img src="IMG/adhim.jpeg" alt="Foto Pak adhim">
+                <h3>Pak adhim</h3>
+                <p>Jabatan: Guru PJOK</p>
+            </div>
+            <div class="card">
+                <img src="IMG/yuli.jpeg" alt="Foto Bu Yuli">
+                <h3>Bu Yuli</h3>
+                <p>Jabatan: Guru Sejarah</p>
+            </div>
+            <div class="card">
+                <img src="IMG/tata.jpeg" alt="Foto bu tata">
+                <h3>bu tata</h3>
+                <p>Jabatan: Guru Matematika</p>
+            </div>
+            <div class="card">
+                <img src="IMG/fada.jpeg" alt="FotoBu fada">
+                <h3>Bu fada</h3>
+                <p>Jabatan: Guru Bahasa Inggris</p>
+            </div>
+            <div class="card">
+                <img src="IMG/etty.jpeg" alt="Foto bu etty tercinta">
+                <h3>bu etty tercinta</h3>
+                <p>Jabatan: Guru PPKN</p>
+            </div>
+            <div class="card">
+                <img src="IMG/nuttt.PNG" alt="Foto Bu nurul">
+                <h3>Bu nurul</h3>
+                <p>Jabatan: Guru BK</p>
+            </div>
+            <div class="card">
+                <img src="IMG/atik.jpeg" alt="Foto Bu atik">
+                <h3>Bu atik</h3>
+                <p>Jabatan: Guru kejurusan</p>
+            </div>
+            <div class="card">
+                <img src="IMG/umam.PNG" alt="Foto Pak umam">
+                <h3>Pak umam</h3>
+                <p>Jabatan: Guru PAI</p>
+            </div>
+            <div class="card">
+                <img src="IMG/nuril.jpeg" alt="Foto Pak nuril">
+                <h3>Pak nuril</h3>
+                <p>Jabatan:  Guru kejurusan</p>
+            </div>
+            <div class="card">
+                <img src="IMG/arno.jpeg" alt="Foto Pak arno">
+                <h3>Pak arno</h3>
+                <p>Jabatan:  Guru produktif</p>
+            </div>
+            <div class="card">
+                <img src="IMG/lala.PNG" alt="Foto bu lala">
+                <h3>bu lala</h3>
+                <p>Jabatan:  Guru kejurusan</p>
+            </div>
+        </div>
+
+        <div id="piketCards" class="carb-container">
+            <div class="card">
+                <h3>Senin</h3>
+                <p> A.ikhsanul amal</p>
+                <p> Ahmad nur alvian</p>
+                <p>Ahmad faizun </p>
+                <p>amelia putri </p>
+                <p>arinatun nasihah</p>
+                <p>candra efania</p>
+                <p>dahlia suaida nur amalina</p>
+            </div>
+            <div class="card">
+                <h3>Selasa</h3>
+                <p>eka putri meyrina</p>
+                <p>elvira aisyah kirani</p>
+                <p>fachri farandy yusuf alghifari utomo</p>
+                <p>fia helda kristina</p>
+                <p>ica putri maya hesti</p>
+                <p>izzatul maulida rahma</p>
+                <p> jasiska ika putri</p>
+            </div>
+            <div class="card">
+                <h3>Rabu</h3>
+                <p> jumiatin </p>
+                <p>  m.tofa nur abidin </p>
+                <p> karomatin nikmah</p>
+                <p> khoimatul aufa</p>
+                <p>  m.miftakhul huda</p>
+                <p>  m.fathkur ferdiansyah</p>
+                <p>  m.rayhan faadihilah</p>
+            </div>
+            <div class="card">
+                <h3>Kamis</h3>
+                <p>novi anggun </p>
+                <p>pingki shofiyanti </p>
+                <p> ragil erndika mulyan</p>
+                <p>siti amaliza </p>
+                <p> naim dwi priadmojo</p>
+                <p> naela puspita</p>
+                <p> nanung syantoro</p>
+            </div>
+           <div class="card">
+                <h3>Jumat</h3>
+                <p>susianti  </p>
+                <p>asbah </p>
+                <p>wahyu rohmawati </p>
+                <p>yunia melati </p>
+                <p>yunita</p>
+           </div>
+        </div>
+
+        <div id="strukturCards" class="card-container">
+            <div class="card">
+                <h3>Ketua Kelas</h3>
+                <p>Ragil erndika mulyan</p>
+                <h3>Wakil</h3>
+                <p>naela puspita</p>
+            </div>
+                <div class="card">
+                <h3>Sekertaris</h3>
+                <p>elvira aisyah kirani</p>
+                <p>novi anggun</p>
+                <h3>Bendahara</h3>
+                <p>siti novita</p>
+                <p>pingki shofiyanti </p>
+
+
+
+            </div>
+         </div>
+
+         <div id="gallery" class="gallery">
+            <img src="IMG/fotbar 1.jpeg" alt="Foto Kegiatan 1">
+            <img src="IMG/fotbar 2.jpeg" alt="Foto Kegiatan 2">
+            <img src="IMG/fotbar 3.jpeg" alt="Foto Kegiatan 3">
+        </div>
+
+        <div id="jadwalPelajaran" class="card-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Pelajaran</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4">Senin</td>
+                        <td>B. Indo</td>
+                    </tr>
+                    <tr>
+                        <td>Sejarah</td>
+                    </tr>
+                    <tr>
+                        <td>Inggris</td>
+                    </tr>
+                    <tr>
+                        <td>PKK</td>
+                    </tr>
+        
+                    <tr>
+                        <td rowspan="4">Selasa</td>
+                        <td>MTK</td>
+                    </tr>
+                    <tr>
+                        <td>PJOK</td>
+                    </tr>
+                    <tr>
+                        <td>Jawa</td>
+                    </tr>
+                    <tr>
+                        <td>Produktif</td>
+                    </tr>
+        
+                    <tr>
+                        <td rowspan="5">Rabu</td>
+                <td>Produktif</td>
+            </tr>
+            <tr>
+                <td>PPKN</td>
+            </tr>
+            <tr>
+                <td>Produktif</td>
+            </tr>
+            <tr>
+                <td>BK</td>
+            </tr>
+            <tr>
+                <td>PAI</td>
+        </tr>
+            <td rowspan="1">kamis</td>
+            <td>Produktif</td>
+        </tr>
+        </tr>
+           <td rowspan="1">jumat</td>
+          <td>Produktif</td>
+       </tr>
+        
+        
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="kegiatanKelas" class="card-container">
+            <h3>Kegiatan Kelas</h3>
+            <ul class="activity-list">
+                <li>KI</li>
+                <li>Class Meet</li>
+                <li>Jumat Religi</li>
+                <li>Makan-Makan Bersama (Khusus Cowo)</li>
+                <li>jamaah sholat duha</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
